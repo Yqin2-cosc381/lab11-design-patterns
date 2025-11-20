@@ -8,7 +8,8 @@ class Initial(Operator):
 
     def operate(self, text: str = None, params: Dict = None) -> str:
         """:return: an initial value."""
-        return ""
+        initial = " ".join([(name.capitalize()[0]+".") for name in text.split()])
+        return initial
 
     def validate(self, params: Dict = None) -> None:
         """Redact does not require any parameters so no validation is needed."""
