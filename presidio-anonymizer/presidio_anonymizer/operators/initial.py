@@ -4,10 +4,10 @@ from presidio_anonymizer.operators import Operator, OperatorType
 
 
 class Initial(Operator):
-    """Redact the string - empty value."""
+    """initial the string - initial value."""
 
     def operate(self, text: str = None, params: Dict = None) -> str:
-        """:return: an empty value."""
+        """:return: an initial value."""
         return ""
 
     def validate(self, params: Dict = None) -> None:
