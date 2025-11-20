@@ -8,7 +8,7 @@ class Initial(Operator):
 
     def operate(self, text: str = None, params: Dict = None) -> str:
         """:return: an initial value."""
-        initial = " ".join([(name.capitalize()[0]+".") for name in text.split()])
+        initial = " ".join([(name.capitalize()[0]+".") for name in text.strip().split()])
         return initial
 
     def validate(self, params: Dict = None) -> None:
