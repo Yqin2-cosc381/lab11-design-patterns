@@ -15,15 +15,15 @@ to the run_anonymizer method in the sample.py (line 13)
 to the anonymize method in AnonymizerEngine Class (line 104)
 [complete the call stack here]
 ```
+![image](call-stack.png)
+* How many if/elif branches are used in selecting the operator?<br>
+  A: 0
 
-* How many if/elif branches are used in selecting the operator?
-*Put your answer here*
+* What data structure (a Python data type) exactly is used to select the operator?<br>
+  A: Dict
 
-* What data structure (a Python data type) exactly is used to select the operator?
-*Put your answer here*
-
-* Explain how "Strategy" design pattern is reflected here.
-
+* Explain how "Strategy" design pattern is reflected here.<br>
+  A: it can get correct operator at running time without if/esle or switch statments. the operator factory load predefined operator names and operator classes into a dictionary, when run_anonymizer with a operator name, it will get the operator class from the dictionay and an operator instance is created and call the operate function of the instance to process PII, it avoid long conditional statements and open to extension but closed for modification, these are typical Strategy design pattern principles
 
 ---
 
