@@ -8,8 +8,11 @@ class Initial(Operator):
 
     def operate(self, text: str = None, params: Dict = None) -> str:
         """:return: an initial value."""
-        initial = " ".join([(name.capitalize()[0]+".") for name in text.strip().split()])
-        return initial
+        if not not str:
+            initial = " ".join([self.get_first_alphanumeric_character(name.upper())+"."
+                                for name in text.strip().split()])
+            return initial
+        return None
 
     def validate(self, params: Dict = None) -> None:
         """Redact does not require any parameters so no validation is needed."""
@@ -22,3 +25,14 @@ class Initial(Operator):
     def operator_type(self) -> OperatorType:
         """Return operator type."""
         return OperatorType.Anonymize
+    
+    def get_first_alphanumeric_character(self,name:str):
+        if all(not c.isalnum() for c in name): #all none alphanumeric in the name
+            return None
+        result =""
+        for c in name:
+            result = result + c
+            if c.isalnum():
+                break
+        return result
+
